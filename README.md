@@ -9,7 +9,7 @@ Usage: file_mover [-h] [-c] SOURCE DESTINATION AMOUNT [-f]
 Options:
     -h --help   Show this help text
     -c --copy   Copy, don’t move files
-    -f --force  Force move even if there are fewer files in SOURCE than needed
+    -f --force  Force transfer even if there are fewer files in SOURCE than needed
 ```
 
 ### Example

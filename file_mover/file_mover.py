@@ -2,15 +2,15 @@
 """
 file_mover
 
-Moves a number of random files from one directory to another.
-Only files with a file name/path that doesn’t exist in the destination directory yet are copied.
+Moves/copies a number of random files from one directory to another.
+Only files with a file name/path that doesn’t exist in the destination directory yet are transferred.
 
 Usage: file_mover [-h] [-c] SOURCE DESTINATION AMOUNT [-f]
 
 Options:
     -h --help   Show this help text
     -c --copy   Copy, don’t move files
-    -f --force  Force move even if there are fewer files in SOURCE than needed
+    -f --force  Force transfer even if there are fewer files in SOURCE than needed
 """
 import logging
 import os

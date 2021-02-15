@@ -7,7 +7,7 @@ setuptools.setup(
     name="file_mover",
     version="0.1.0",
     author="Jonas A. Wendorf",
-    description="Moves a number of random files from one directory to another.",
+    description="Moves/copies a number of random files from one directory to another.",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/jonasw234/file_mover",
