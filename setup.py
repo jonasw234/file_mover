@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="file_mover",
-    version="0.0.1",
+    version="0.1.0",
     author="Jonas A. Wendorf",
     description="Moves a number of random files from one directory to another.",
     long_description=long_description,

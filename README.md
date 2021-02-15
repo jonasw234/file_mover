@@ -4,10 +4,11 @@ Only files with a file name/path that doesn’t exist in the destination directo
 
 ## Usage
 ```
-Usage: file_mover [-h] SOURCE DESTINATION AMOUNT [-f]
+Usage: file_mover [-h] [-c] SOURCE DESTINATION AMOUNT [-f]
 
 Options:
     -h --help   Show this help text
+    -c --copy   Copy, don’t move files
     -f --force  Force move even if there are fewer files in SOURCE than needed
 ```
 
@@ -74,4 +75,10 @@ pip3 install -r dev-requirements.txt
 For normal usage do the same but don’t include the last line or use [`pipx`](https://pypi.org/project/pipx/) and install with
 ```
 pipx install git+https://github.com/jonasw234/file_mover
+```
+
+If you want to have nice aliases (e.g. `rcp` and `rmv` for random copy/move), create them like this and put them in your `.bashrc` or `.zshrc`:
+```bash
+alias rcp='file_mover -c'
+alias rmv='file_mover'
 ```
