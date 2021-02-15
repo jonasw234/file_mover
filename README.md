@@ -1,6 +1,6 @@
 # file_mover
-Moves a number of random files from one directory to another.
-Only files with a file name/path that doesn’t exist in the destination directory yet are copied.
+Moves/copies a number of random files from one directory to another.
+Only files with a file name/path that doesn’t exist in the destination directory yet are transferred.
 
 ## Usage
 ```
