@@ -3,7 +3,8 @@
 file_mover
 
 Moves/copies a number of random files from one directory to another.
-Only files with a file name/path that doesn’t exist in the destination directory yet are transferred.
+Only files with a file name/path that doesn’t exist in the destination directory yet are
+transferred.
 
 Usage: file_mover [-h] [-c] SOURCE DESTINATION AMOUNT [-f]
 
@@ -115,11 +116,14 @@ def main():
         transfer_files(args["SOURCE"], args["DESTINATION"], sample, args["--copy"])
     except ValueError:
         logging.warning(
-            "There were fewer unique file names in the source directory than you told me to transfer."
+            "There were fewer unique file names in the source directory than you told me to "
+            "transfer."
         )
         if args["--force"]:
             logging.info("Moving the rest of them because you activated force mode.")
-            transfer_files(args["SOURCE"], args["DESTINATION"], files_to_transfer, args["--copy"])
+            transfer_files(
+                args["SOURCE"], args["DESTINATION"], files_to_transfer, args["--copy"]
+            )
 
 
 if __name__ == "__main__":
