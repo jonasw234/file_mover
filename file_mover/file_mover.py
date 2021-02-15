@@ -40,7 +40,7 @@ def folder_contents(folder: str) -> list:
     contents = set()
     for root, _, files in os.walk(folder):
         for name in files:
-            contents.add(os.path.join(root, name))
+            contents.add(relative_path(folder, os.path.join(root, name)))
     return contents
 
 
@@ -66,7 +66,7 @@ def relative_path(basepath: str, fullpath: str) -> str:
     return fullpath
 
 
-def transfer_files(src: str, dst: str, filenames: list, move=True):
+def transfer_files(src: str, dst: str, filenames: list, copy=False):
     """
     Transfer files in `filenames` from `src` to `dst`.
 
@@ -78,17 +78,17 @@ def transfer_files(src: str, dst: str, filenames: list, move=True):
         Destination directory
     filenames : list
         List of files to move
-    move : bool
+    copy : bool
         Whether to move (default) or copy files
     """
+    transfer_func = shutil.move
+    if copy:
+        transfer_func = shutil.copy
     for filename in filenames:
-        dst_path = os.path.join(dst, relative_path(src, os.path.dirname(filename)))
+        dst_path = os.path.join(dst, os.path.dirname(filename))
         if not os.path.isdir(dst_path):
             os.makedirs(dst_path, exist_ok=True)
-        transfer_func = shutil.move
-        if not move:
-            transfer_func = shutil.copy
-        transfer_func(os.path.join(src, relative_path(src, filename)), dst_path)
+        transfer_func(os.path.join(src, filename), dst_path)
 
 
 def main():
