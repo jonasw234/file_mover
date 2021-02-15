@@ -60,6 +60,7 @@ def relative_path(basepath: str, fullpath: str) -> str:
     str
         The relative path
     """
+    basepath = basepath.rstrip(os.sep)
     if fullpath.startswith(basepath):
         return fullpath[len(basepath) + 1 :]
     return fullpath
